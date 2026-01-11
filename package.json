@@ -1,0 +1,47 @@
+{
+  "name": "@traceos/execution-tracer",
+  "version": "1.0.1",
+  "description": "Generic execution tracer for serverless environments - debug non-traceable errors",
+  "keywords": [
+    "trace",
+    "debug",
+    "serverless",
+    "cloudflare",
+    "workers",
+    "execution",
+    "monitoring",
+    "traceos",
+    "devops"
+  ],
+  "author": "Edge Foundry, Inc.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "npm run build && node dist/test.js",
+    "prepublishOnly": "npm run test && npm run build"
+  },
+  "devDependencies": {
+    "@types/node": "^25.0.6",
+    "typescript": "^5.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sygnl/sygnl-light",
+    "directory": "packages/trace"
+  }
+}
